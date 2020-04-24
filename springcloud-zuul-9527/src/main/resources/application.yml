@@ -1,0 +1,30 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    # springcloud-provider-dept 是服务名称
+    #配置之前访问地址：http://localhost:9527/springcloud-provider-dept/dept/get/4
+    #配置之后访问地址：http://localhost:9527/mydept/dept/get/4
+    springcloud-provider-dept:
+      serverId: springcloud-provider-dept
+      path: /mydept/**
+
+  #不能使用这个路径访问了，ignored：忽略
+  #ignored-services: springcloud-provider-dept
+  ignored-services: "*" # 忽略全部
+  
+  #忽略全部后，以上两个路径都不能访问，需要添加前缀，使用http://localhost:9527/wlp/mydept/dept/get/4，可访问
+  #而http://localhost:9527/wlp/springcloud-provider-dept/dept/get/4 依然不能访问，因为前面的配置已经将其改成mydept了
+  prefix: /wlp #设置公共的前缀访问

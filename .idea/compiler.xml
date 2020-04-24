@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloudeureka7002" />
+        <module name="springcloudeureka7001" />
+        <module name="springcloudconsumerdeptfeign" />
+        <module name="springcloudzuul9527" />
+        <module name="springcloudproviderdept8003" />
+        <module name="springcloudproviderdept8002" />
+        <module name="springcloudproviderdept8001" />
+        <module name="springcloudproviderdepthystrix8001" />
+        <module name="springcloudapi" />
+        <module name="springcloudconsumerhystrixdashboard" />
+        <module name="springcloudconsumerdept80" />
+        <module name="springcloudconfigserver3001" />
+        <module name="springcloudconfigclient4001" />
+        <module name="springcloudeureka7003" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

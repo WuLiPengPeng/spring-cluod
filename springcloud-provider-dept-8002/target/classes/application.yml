@@ -1,0 +1,37 @@
+server:
+  port: 8002
+
+#  mybatis 配置
+mybatis:
+  type-aliases-package: com.wlp.springcloud.pojo
+#  mybatis配置文件地址
+  config-location: classpath:mybatis/mybatis-config.xml
+#    mapper文件地址
+  mapper-locations: classpath:mybatis/mapper/*.xml
+#spring 配置
+spring:
+  application:
+    name: springcloud-provider-dept
+#    数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #    mysql 8 的连接地址和驱动是有要求的
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db02?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: wlp888
+
+#Eureka配置 服务注册到哪里
+eureka:
+  client:
+    service-url:
+      #单机 defaultZone: http://localhost:7001/eureka/
+      #集群
+      defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-dept8002 #修改Eureka上默认的描述信息
+
+#info 配置(key随意，只是给告知别人的一些信息而已)
+info:
+  app.name: wlp-springcolud
+  company.name: wlp.com

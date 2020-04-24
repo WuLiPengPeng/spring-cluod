@@ -1,0 +1,5 @@
+# application.yml,用户级别的配置
+
+spring:
+  application:
+    name: springcloud-config-client-4001
